@@ -46,7 +46,7 @@ done
 
 ngrok(){
 printf "\e[1;92m[\e[0m+\e[1;92m]\033[1;38;5;208mStart php server su\033[31;1m(\033[37;1mHostpotnya Hidupin su!!\033[31;1m)\e[0m\e[1;77m(localhost:3333)\e[0m\e[1;92m...!!!\e[0m\n"
-cd sites/$server && php -S 0.0.0.0:3333 > /dev/null 2>&1 &
+cd site/$server && php -S 0.0.0.0:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m\e[1;77m+\e[1;92m]\033[1;38;5;208mStart ngrok server su\033[31;1m(\033[37;1mHotspot idupin\033[31;1m)\e[0m\e[1;77m(http 3333)\e[0m\e[1;92m...!!!\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
